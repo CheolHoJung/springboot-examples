@@ -1,4 +1,4 @@
-package weblfuxtest.weblfuxtest;
+package weblfuxtest.weblfuxtest.based.functional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +19,6 @@ public class RoutingConfiguration {
     public RouterFunction<ServerResponse> playerRouter() {
         return RouterFunctions
                 .route(GET("/players/{name}"), playerHandler::getName)
-                .filter(new ExampleHandlerFilterFunction());
+                .filter(new PlayerHandlerFilterFunction());
     }
 }

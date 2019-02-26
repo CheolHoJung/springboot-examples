@@ -1,4 +1,4 @@
-package weblfuxtest.weblfuxtest;
+package weblfuxtest.weblfuxtest.based.functional;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
