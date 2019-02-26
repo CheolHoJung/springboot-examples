@@ -12,10 +12,6 @@ class ExampleHandlerFilterFunction implements HandlerFilterFunction<ServerRespon
     @Override
     public Mono<ServerResponse> filter(ServerRequest serverRequest,
                                        HandlerFunction<ServerResponse> handlerFunction) {
-
-        if (serverRequest.pathVariable("name").equalsIgnoreCase("test")) {
-            return ServerResponse.status(FORBIDDEN).build();
-        }
         serverRequest.exchange().getResponse()
                 .getHeaders().add("pattern", serverRequest.exchange().getAttributes().get(RouterFunctions.MATCHING_PATTERN_ATTRIBUTE).toString());
         return handlerFunction.handle(serverRequest);
